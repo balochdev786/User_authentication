@@ -21,6 +21,7 @@ app.use('/', routes);
 
 
 app.listen(PORT, function () {
+    db();
     console.log(`App is running on ${PORT}....`);
 })
 

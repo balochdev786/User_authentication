@@ -7,7 +7,6 @@ const passport = require('passport');
 const {User} = require('../models/models.js');
 
 
-
 const home = async (request,response) => {
     try {
         response.send("Home page...");
@@ -37,6 +36,7 @@ const register = async (request,response) => {
             password: user_data.password,
             role: user_data.role
         });
+        // console.log(typeof(newUser));
 
         newUser.save().then(() => {
             console.log("User saved successfully...");
@@ -55,6 +55,7 @@ const allUsers = async (request,response) => {
         const alls = await User.find();
         response.json(alls);
     } catch(error) {
+        
         console.log("Error in Users page...");
     }
 } 
